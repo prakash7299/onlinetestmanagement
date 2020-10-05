@@ -9,10 +9,10 @@
 		<version>2.3.4.RELEASE</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.capgemini.onlinetestmanagement</groupId>
-	<artifactId>OnlineTestManagement</artifactId>
+	<groupId>com.dxctraining.onlinetestmanagement</groupId>
+	<artifactId>onlinetestmanagement</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>OnlineTestManagement</name>
+	<name>onlinetestmanagement</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>

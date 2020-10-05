@@ -4,4 +4,6 @@
 *.iml
 .idea
 bin
+mvnw
+HELP.md
 **/target
