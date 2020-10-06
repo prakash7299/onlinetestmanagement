@@ -7,6 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 
+
 @Entity
 @Table(name="online_test")
 public class Exam {
@@ -46,12 +47,22 @@ public class Exam {
 	public void setMinutes(int minutes) {
 		this.minutes = minutes;
 	}
-	
-	
 	@Override
-	public String toString() {
-		return "Exam [examId=" + examId + ", examName=" + examName + ", minutes=" + minutes + "]";
-	}
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Exam that = (Exam) o;
+        return examId == that.examId;
+    }
+
+    @Override
+    public int hashCode() {
+        return examId;
+    }
+	
+	
 	
 	
 }

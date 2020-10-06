@@ -11,6 +11,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 
+
 @Entity
 @Table(name="assign_exam_to_user")
 public class AssignExamToUser {
@@ -85,11 +86,20 @@ public class AssignExamToUser {
 	public void setExamId(Integer examId) {
 		this.examId = examId;
 	}
-
 	@Override
-	public String toString() {
-		return "AssignExamToUser [assignedId=" + id + " status=" + status
-				+ ", dateOfExam=" + dateOfExam + ", user=" + userId + ", exam=" + examId + "]";
-	}
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        AssignExamToUser that = (AssignExamToUser) o;
+        return id == that.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return id;
+    }
+
 	
 }

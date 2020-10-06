@@ -59,9 +59,19 @@ public class User {
 	}
 	
 	@Override
-	public String toString() {
-		return "User [userId=" + userId + ", userName=" + userName + ", password=" + password + ", role=" + role + "]";
-	}
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        User that = (User) o;
+        return userId == that.userId;
+    }
+
+    @Override
+    public int hashCode() {
+        return userId;
+    }
 
 	
 }
