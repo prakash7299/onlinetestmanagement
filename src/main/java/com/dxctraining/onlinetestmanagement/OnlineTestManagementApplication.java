@@ -9,7 +9,6 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
 
 @SpringBootApplication
-@CrossOrigin(origins="http://localhost:4200")
 public class OnlineTestManagementApplication {
 
 	public static void main(String[] args) {
