@@ -29,15 +29,16 @@ class OnlineTestManagementApplicationTests {
 	private AssignExamToUserServiceImpl assignExamToUserServiceImpl;
 
 	
-	
 	@Test
-	void getUserByIdValidCreditsTest() {
-		User userObjTest = new User(1,"vijay","passs","user");
-		User userObj = assignExamToUserServiceImpl.getUserById(userObjTest.getUserId());
-		System.out.println(" Hello i am from Test :"+userObj.getRole());
-		Assertions.assertEquals(userObjTest.getRole(),userObj.getRole());
+	void addUserTest() {
+		User userObjTest=new User(1,"prakash","abcde","user");
+		User userObj=assignExamToUserServiceImpl.addUser(userObjTest);
+		System.out.println("id"+userObjTest.getUserId());
+		User userObjById = assignExamToUserServiceImpl.getUserById(1);
+		System.out.println("userObjId "+userObjById.getUserId());
+		Assertions.assertEquals(userObjTest.getUserName(),userObjById.getUserName());
+		
 	}
-
 	@Test
 	void getUserByIdInValidCreditsTest() {
 		User userObjTest = new User(55,"vijay","passs","user");
@@ -46,31 +47,9 @@ class OnlineTestManagementApplicationTests {
 		Assertions.assertEquals(null,userObj);
 	}
 	
-	@Test
-	void getAllUsersForNonEmptyListTest() {
-		List<User> userList = assignExamToUserServiceImpl.getAllUsers();
-		System.out.println("The UserList Size is :"+userList.size());
-		int excpectedSize  = 3;
-		Assertions.assertEquals(excpectedSize,userList.size());
-	}
 	
 	
-	@Test
-	void getAllUsersForEmptyListTest() {
-		List<User> userList = assignExamToUserServiceImpl.getAllUsers();
-		System.out.println("The UserList Size is :"+userList.size());
-		int excepectedSize =0;
-		if(userList.size() !=0) 
-		{
-			excepectedSize = 3;
-			Assertions.assertEquals(excepectedSize,userList.size());
-		}
-		else
-		{
-			System.out.println("UserList size is Zero: 0");
-			Assertions.assertEquals(excepectedSize,userList.size());
-		}
-	}
+	
 	
 	
 	

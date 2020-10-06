@@ -42,11 +42,6 @@ public class AssignExamToUserServiceImpl implements AssignExamToUserServiceI{
 	}
 
 	@Override
-	public User editUser(User user) {
-		userDaoI.saveAndFlush(user);
-		return user;
-	}
-	@Override
 	public Boolean deleteAssignedExam(int id) {
 		assignExamToUserDaoI.deleteById(id);
 		return null;
@@ -82,12 +77,6 @@ public class AssignExamToUserServiceImpl implements AssignExamToUserServiceI{
 	@Override
 	public Exam addExam(Exam exam) {
 		examDaoI.save(exam);
-		return exam;
-	}
-
-	@Override
-	public Exam editExam(Exam exam) {
-		examDaoI.saveAndFlush(exam);
 		return exam;
 	}
 

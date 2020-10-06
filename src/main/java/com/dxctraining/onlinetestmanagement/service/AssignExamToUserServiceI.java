@@ -8,17 +8,13 @@ import com.dxctraining.onlinetestmanagement.entity.User;
 
 public interface AssignExamToUserServiceI {
 	
-	    //User details.......
 		public User addUser(User user);
-		public User editUser(User user);
 		public User getUserById(int userId);
 		public List<User> getAllUsers();
 		
 		
 		
-		//Exam details.......
 		public Exam addExam(Exam exam);
-		public Exam editExam(Exam exam);
 		public List<Exam> viewExams();
 		public Exam getExamById(int examId);
 		
